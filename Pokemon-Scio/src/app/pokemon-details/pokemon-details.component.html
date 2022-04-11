@@ -1,0 +1,64 @@
+<title>{{name | title}}</title>
+<app-pokemon-toolbar></app-pokemon-toolbar>
+<div class="container">
+    <div class="row">
+        <div class="col-2">
+        </div>
+        <div class="col-8">
+            <table class="table table-bordered table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col" class="text-center">{{'#'+pokemonDetails.id+' '+pokemonDetails.name | camelCase}}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center"><img src={{pokemonDetails.sprites.front_default}} alt="{{pokemonDetails.name}}" width="35%" class="img-fluid"></td>
+                  </tr>
+                  <tr>
+                    <th scope="col" class="text-center">Type:</th>
+                  </tr>
+                  <tr>
+                    <th scope="col" class="text-center">
+                      <span class="badge bg-primary" *ngFor="let typesArr of pokemonDetails.types">{{typesArr.type.name | title}}</span>
+                    </th>
+                  </tr>
+                  <tr>
+                    <th scope="col" class="text-center">Height:</th>
+                  </tr>
+                  <tr>
+                    <td scope="col" class="text-center">{{pokemonDetails.height}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="col" class="text-center">Weight:</th>
+                  </tr>
+                  <tr>
+                    <td scope="col" class="text-center">{{pokemonDetails.weight}}</td>
+                  </tr>
+                  <tr>
+                    <th scope="col" class="text-center">Abilities:</th>
+                  </tr>
+                  <tr>
+                    <td scope="col" class="text-center">
+                      <p *ngFor="let abilityArr of pokemonDetails.abilities">
+                        {{abilityArr.ability.name | title}}
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="col" class="text-center">Games where it appears:</th>
+                  </tr>
+                  <tr>
+                    <td scope="col" class="text-center">
+                      <p *ngFor="let gamesArr of pokemonDetails.game_indices">
+                        {{gamesArr.version.name | title}}
+                      </p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+        <div class="col-2">
+        </div>
+    </div>
+</div>
