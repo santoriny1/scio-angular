@@ -1,5 +1,5 @@
 # scio-angular
-Hobbies page with bootstrap
+Consume PokeAPI with Angular
 
 ## Installation
  - npm i
